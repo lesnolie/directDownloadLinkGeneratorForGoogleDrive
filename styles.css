@@ -1,0 +1,335 @@
+/* I will be using the Raleway font style from google fonts and importing it accordingly */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Sacramento&display=swap');
+
+/* Setting some color variables for the project */
+
+:root {
+    --white: #fdfff5;
+    --black: #1c2b2d;
+    --blue: #315399;
+    --color-primary: #800080;
+    --color-sec: #db6400;
+    --gray: #969892;
+    --dark-gray: #222831; 
+    --deep-blue: #345083;
+    --accented-background: #993F5E;
+    --nav: #4BB9DD;
+    --secondaryPurpose: #90A5C1;
+    --text: #F7F9F9;
+}
+
+/* CSS Reset values */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Raleway', cursive;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.instructions {
+    font-size: 1.6rem;
+    width: 30%;
+    height: 100vh;
+    background-color: var(--deep-blue);
+    padding-top: 5rem;
+    color: var(--text);
+}
+
+.instructions h2 {
+    font-size: 3.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+.instructions h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 2px;
+    background-color: gold;
+}
+
+hr {
+    background: gold;
+}
+
+.instructions ol {
+ padding: 1rem 0 0 1.5rem;
+}
+
+.instructions ol a {
+    color: gold;
+    text-decoration: none;
+}
+
+/* .instructions ol li p span {
+    color: gold;
+} */
+
+.download-link {
+    width: 70%;
+    padding-top: 5rem;
+}
+
+.download-link section {
+    border: 2px solid var(--gray);
+    border-radius: 0 0 10px 10px;
+}
+
+main h1 {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 5rem;
+    color: var(--black);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+main input[type=radio] {
+    display: none;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    background: var(--gray);
+    z-index: 1;
+}
+
+main nav label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+    position: relative;
+    color: var(--text);
+    cursor: pointer;
+}
+
+main nav label i {
+    padding-right: 5px;
+    color: gold;
+}
+
+nav .slide {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    width: 26%;
+    height: 100%;
+    border-radius: 3px;
+    z-index: -1;
+    transition: all .3s;
+    background: var(--deep-blue)
+}
+
+#register:checked ~ nav .slide {
+    left: 31%;
+    
+}
+
+#reset:checked ~ nav .slide {
+    left: 66%;
+}
+
+.content {
+    display: none;
+}
+
+#login:checked ~ section .content-link {
+    display: block;
+}
+
+#register:checked ~ section .content-audio {
+    display: block;
+}
+
+#reset:checked ~ section .content-video {
+    display: block;
+}
+
+/* STYLING FORMS WITHIN THE CONTENT */
+
+section .content {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.content > i {
+    font-size: 3rem;
+    color: gold;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 5rem;
+
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    line-height: 2;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.content h2::after {
+    content: "";
+    position: absolute;
+    left: 12rem;
+    bottom: 2rem;
+    width: 2.5%;
+    height: 2px;
+    background-color: var(--dark-gray);
+}
+
+.content h2::before {
+    content: "";
+    position: absolute;
+    right: 12rem;
+    bottom: 2rem;
+    width: 2.5%;
+    height: 2px;
+    background-color: var(--dark-gray);
+}
+
+.content p {
+    padding-bottom: 1rem;
+    font-style: italic;
+}
+
+.content form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content form label {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content form label i {
+    font-size: 1.8rem;
+    color: gold;
+    padding: 10px;
+    border-radius: 5rem;
+}
+
+.content form label input {
+    display: inline;
+    width: 70%;
+    padding: 1.3rem 3rem;
+    border-radius: 10px 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    color: var(--black);
+    transition: all .3s;
+}
+
+.content form label input:focus:invalid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--accented-background);
+}
+
+.content form label input:valid {
+    font-size: 1.6rem;
+    border-bottom: 2px solid green;
+    background: var(--white);
+}
+
+::placeholder {
+    font-size: 1.6rem;
+    color: var(--gray)
+}
+
+.content .btn {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: var(--blue);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.content .btn:hover {
+    background: var(--color-sec)
+}
+
+.embed-code {
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.embed-code h3 {
+    margin-top: 1rem;
+}
+
+.content form textarea {
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.embed-code span {
+    position: absolute;
+    right: 1px;
+    bottom: 5px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: var(--blue);
+    color: var(--white);
+    padding: 5px 8px;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.embed-code span:hover {
+    font-size: 1.8rem;
+}
